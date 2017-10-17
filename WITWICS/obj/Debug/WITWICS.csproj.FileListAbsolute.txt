@@ -1,0 +1,12 @@
+C:\Users\ameade\Documents\Visual Studio 2017\Projects\WITWICS\WITWICS\obj\Debug\WITWICS.csprojResolveAssemblyReference.cache
+C:\Users\ameade\Documents\Visual Studio 2017\Projects\WITWICS\WITWICS\bin\Debug\WITWICS.exe.config
+C:\Users\ameade\Documents\Visual Studio 2017\Projects\WITWICS\WITWICS\bin\Debug\WITWICS.exe
+C:\Users\ameade\Documents\Visual Studio 2017\Projects\WITWICS\WITWICS\bin\Debug\WITWICS.pdb
+C:\Users\ameade\Documents\Visual Studio 2017\Projects\WITWICS\WITWICS\obj\Debug\WITWICS.exe
+C:\Users\ameade\Documents\Visual Studio 2017\Projects\WITWICS\WITWICS\obj\Debug\WITWICS.pdb
+C:\Users\ameade\Desktop\WITWICS-Startup\WITWICS\bin\Debug\WITWICS.exe.config
+C:\Users\ameade\Desktop\WITWICS-Startup\WITWICS\bin\Debug\WITWICS.exe
+C:\Users\ameade\Desktop\WITWICS-Startup\WITWICS\bin\Debug\WITWICS.pdb
+C:\Users\ameade\Desktop\WITWICS-Startup\WITWICS\obj\Debug\WITWICS.csprojResolveAssemblyReference.cache
+C:\Users\ameade\Desktop\WITWICS-Startup\WITWICS\obj\Debug\WITWICS.exe
+C:\Users\ameade\Desktop\WITWICS-Startup\WITWICS\obj\Debug\WITWICS.pdb
