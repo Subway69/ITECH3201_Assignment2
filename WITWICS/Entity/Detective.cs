@@ -29,6 +29,7 @@ namespace WITWICS.Entity
         public String GetRank()
         {
             String rank;
+            // Switch statements are a code smell however it does feel appropriate for this.
             switch (casesSolved)
             {
                 case 0:

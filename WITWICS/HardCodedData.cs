@@ -19,6 +19,7 @@ namespace WITWICS
             CreateWorldMap();
         }
 
+        // Why are we using a finalizer?
         ~HardCodedData()
         {
         }

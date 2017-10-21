@@ -32,12 +32,11 @@ namespace WITWICS.Control
             gameClient.ConsoleMessage("Your current rank is: " + theDetective.GetRank() + "\n");
 
             gameClient.GetReply("<< Press Enter to continue >>");
-
-
         }
 
         public void AssignCaseLoad()
         {
+            // Extract method: GetGenderNouns?
             String hisher, himher, malefemale;
             if (gameData.GetCurrentCase().Villain.Sex == "Male")
             {
@@ -51,7 +50,9 @@ namespace WITWICS.Control
                 himher = "her";
                 malefemale = "Female";
             }
+            // End Extract Method
 
+            // Use string formatter to make one larger string?
             gameClient.ConsoleMessage("\n*** FLASH ***\n");
 
             // print out case headline
