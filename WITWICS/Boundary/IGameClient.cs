@@ -10,5 +10,7 @@ namespace WITWICS.Boundary
         
         /// <param name="message"></param>
         void ConsoleMessage(String message);
+
+        String GetCommand();
     }
 }
