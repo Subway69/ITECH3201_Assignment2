@@ -30,6 +30,7 @@ namespace WITWICS.Control
             gameClient.ConsoleMessage(gameData.GetStartingLocation().Description + "\n");
             String DetectiveName = gameClient.GetReply("Detective at keyboard, please identify yourself: ");
             detective = new Detective(DetectiveName);
+            detective.Location = gameData.GetStartingLocation();
             gameClient.ConsoleMessage("You have been identified, " + DetectiveName + "\n\n");
             gameClient.ConsoleMessage("Your current rank is: " + detective.GetRank() + "\n");
 

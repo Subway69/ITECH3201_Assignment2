@@ -13,6 +13,10 @@ namespace WITWICS.Entity
 
         // I could be looking too far into this.
 
-        private AirportCollection airports;
+        // private AirportCollection airports;
+        public Airport() : base() { }
+
+        public Airport(String description, String name) : base(description, name) { }
+        
     }
 }

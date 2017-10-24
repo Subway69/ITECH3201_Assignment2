@@ -33,6 +33,12 @@ namespace WITWICS.Entity
             return true;
         }
 
+        public Destination GetDestination(String destinationLabel)
+        {
+            return (Destination)destinations[destinationLabel];
+        }
+
+
         public String Description
         {
             get { return description; }

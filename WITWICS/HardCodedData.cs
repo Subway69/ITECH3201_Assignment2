@@ -53,9 +53,9 @@ namespace WITWICS
             Location shanghai = new Location("", "Shanghai");
             Location vienna = new Location("", "Vienna");
 
-            startUp.AddDestination(prague.Name, new Destination(prague.Description, prague));
-            startUp.AddDestination(shanghai.Name, new Destination(shanghai.Description, shanghai));
-            startUp.AddDestination(vienna.Name, new Destination(vienna.Description, vienna));
+            startUp.AddDestination("prague", new Destination(prague.Description, prague));
+            startUp.AddDestination(shanghai.Name.ToLower(), new Destination(shanghai.Description, shanghai));
+            startUp.AddDestination(vienna.Name.ToLower(), new Destination(vienna.Description, vienna));
 
             // Create suspects
             Suspect robArr = new Suspect("Rob Arr", "Male", "Brown", "Brown", "Golf", "Scar", "Volkswagon");
@@ -66,10 +66,14 @@ namespace WITWICS
 
         private void CreateWorldoMap()
         {
-            startUp = new Location(
+            startUp = new Airport(
                 "A rundown open office, with yellowing paperwork on the desks and notes from old investigations written in chalk on the blackboards", 
                 "ACME Headquarters"
             );
+
+            Airport prague = new Airport("The capital city of the Czech Republic", "Prague");
+            Airport shanghai = new Airport("", "Shanghai");
+            Airport vienna = new Airport("", "Vienna");
 
         }
     }
