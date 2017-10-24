@@ -26,5 +26,13 @@ namespace WITWICS
         {
             Console.Out.Write(message);
         }
+
+        public String GetCommand()
+        {
+            // Write out a template for entering input.
+            Console.Out.Write("\n>>> ");
+            // Return the users input.
+            return Console.In.ReadLine();
+        }
     }
 }

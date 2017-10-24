@@ -4,6 +4,7 @@ namespace WITWICS.Entity
 {
     public class Suspect : NonPlayerCharacter
     {
+        // I know exactly what I'm doing now
         private Boolean isTargetVillain;
         private String sex;
         private String hair;

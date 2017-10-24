@@ -6,14 +6,16 @@ namespace WITWICS.Control
 {
     class ACMEController
     {
-        public IGameClient gameClient;
-        public IGameData gameData;
-        public Detective theDetective;
+        private IGameClient gameClient;
+        private IGameData gameData;
+        private Detective detective;
+        private CommandHandler commandHandler;
 
         public ACMEController(IGameData gameData, IGameClient gameClient)
         {
             this.gameData = gameData;
             this.gameClient = gameClient;
+            commandHandler = new CommandHandler();
         }
 
         public void PrintWelcome()
@@ -27,9 +29,9 @@ namespace WITWICS.Control
             gameClient.ConsoleMessage("You see before you ");
             gameClient.ConsoleMessage(gameData.GetStartingLocation().Description + "\n");
             String DetectiveName = gameClient.GetReply("Detective at keyboard, please identify yourself: ");
-            theDetective = new Detective(DetectiveName);
+            detective = new Detective(DetectiveName);
             gameClient.ConsoleMessage("You have been identified, " + DetectiveName + "\n\n");
-            gameClient.ConsoleMessage("Your current rank is: " + theDetective.GetRank() + "\n");
+            gameClient.ConsoleMessage("Your current rank is: " + detective.GetRank() + "\n");
 
             gameClient.GetReply("<< Press Enter to continue >>");
         }
@@ -68,7 +70,7 @@ namespace WITWICS.Control
             // print out "Your assignment: Track the thief from <city> to <his / her> hideout and arrest <him / her>
             gameClient.ConsoleMessage("Your assignment: Track the thief from " + gameData.GetCurrentCase().StartingCity.Name + " to " + hisher + " hideout and arrest " + himher + "!\n\n");
 
-            gameClient.ConsoleMessage("Good luck, " + theDetective.GetRank() + " " + theDetective.Name + ".");
+            gameClient.ConsoleMessage("Good luck, " + detective.GetRank() + " " + detective.Name + ".");
         }
 
         public void RunGame()
@@ -76,8 +78,26 @@ namespace WITWICS.Control
             PrintWelcome();
             SetupDetective();
             AssignCaseLoad();
+            
+            while(HandleTurn())
+            {
+                // Do something
+            }
+        }
 
-            gameClient.GetReply("<< Press Enter to exit game >>");
+        private bool HandleTurn()
+        {
+            // Create a command response from the command entered.
+            CommandResponse commandResponse = commandHandler.ProcessTurn(
+                gameClient.GetCommand(),
+                detective
+            );
+
+            // Get the message from the command reponse and write it to the client.
+            gameClient.ConsoleMessage(commandResponse.Message);
+
+            // Return the opposite of the FinishedGame bool [default: false]
+            return !commandResponse.FinishedGame;
         }
     }
 }
