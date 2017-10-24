@@ -63,5 +63,14 @@ namespace WITWICS
             // Create case
             currentCase = new Case(1, "Valuable Treasure", "preserved artifacts from Jewish synagogues", robArr, prague);
         }
+
+        private void CreateWorldoMap()
+        {
+            startUp = new Location(
+                "A rundown open office, with yellowing paperwork on the desks and notes from old investigations written in chalk on the blackboards", 
+                "ACME Headquarters"
+            );
+
+        }
     }
 }

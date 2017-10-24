@@ -8,7 +8,7 @@ namespace WITWICS.Entity
 {
     public class Detective : Character
     {
-        private Location currentLocation;
+        private Location location;
         private static int casesSolved = 0;
 
         public Detective()
@@ -32,10 +32,10 @@ namespace WITWICS.Entity
             }
         }
 
-        public Location CurrentLocation
+        public Location Location
         {
-            get => currentLocation;
-            set => currentLocation = value;
+            get => location;
+            set => location = value;
         }
 
         public String GetRank()

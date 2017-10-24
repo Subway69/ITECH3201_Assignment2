@@ -12,5 +12,7 @@ namespace WITWICS.Entity
         // whilst you can only talk to NPC's within small locations?
 
         // I could be looking too far into this.
+
+        private AirportCollection airports;
     }
 }

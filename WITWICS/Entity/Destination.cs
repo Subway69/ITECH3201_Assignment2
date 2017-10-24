@@ -11,10 +11,10 @@ namespace WITWICS.Entity
         private String description;
         private Location theDestination;
 
-        public Destination (String description, Location nextDestination)
+        public Destination (String description, Location destination)
         {
             Description = description;
-            TheDestination = nextDestination;
+            TheDestination = destination;
         }
 
 
