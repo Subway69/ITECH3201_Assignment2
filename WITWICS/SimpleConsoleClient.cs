@@ -30,7 +30,7 @@ namespace WITWICS
         public String GetCommand()
         {
             // Write out a template for entering input.
-            Console.Out.WriteLine("\n>>> ");
+            Console.Out.Write("\n>>> ");
             // Return the users input.
             return Console.In.ReadLine();
         }

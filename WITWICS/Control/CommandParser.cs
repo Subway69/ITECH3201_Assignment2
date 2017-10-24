@@ -18,10 +18,10 @@ namespace WITWICS.Control
 
 
         // Constructor commented out for now as we determine the best course of action.
-        //public CommandParser(ArrayList validCommands)
-        //{
-
-        //}
+        public CommandParser(ArrayList validCommands)
+        {
+            this.validCommands = validCommands;
+        }
 
         public CommandParser(ArrayList validCommands, ArrayList ignoredWords)
         {
@@ -32,7 +32,7 @@ namespace WITWICS.Control
         public ParsedCommand Parse(String input)
         {
             // Split our input into each separate word [input.Split() = input.Split(" ")]
-            ArrayList inputArray = new ArrayList(input.Split());
+            ArrayList inputArray = new ArrayList(input.ToLower().Split());
             // Create the object and assign data to it via setters
             ParsedCommand parsedCommand = new ParsedCommand();
             // TODO: Check variable naming, could it be more clear?

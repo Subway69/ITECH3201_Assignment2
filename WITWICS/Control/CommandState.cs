@@ -15,6 +15,9 @@ namespace WITWICS.Control
         public CommandState()
         {
             AvailableCommands = new Hashtable();
+            AvailableCommands.Add("move", new MoveCommand());
+            AvailableCommands.Add("look", new LookCommand());
+            AvailableCommands.Add("quit", new QuitCommand());
         }
 
         public abstract CommandState Update(Detective detective);

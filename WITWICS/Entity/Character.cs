@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WITWICS.Entity
 {
-    public class Character
+    public abstract class Character
     {
         protected String name;
 

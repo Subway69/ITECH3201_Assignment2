@@ -11,5 +11,15 @@ namespace WITWICS.Entity
         {
         }
 
+        public NonPlayerCharacter(Clue clue)
+        {
+            Clue = clue;
+        }
+
+        public Clue Clue
+        {
+            get => clue;
+            set => clue = value;
+        }
     }
 }
