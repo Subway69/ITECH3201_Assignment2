@@ -28,19 +28,15 @@ namespace WITWICS.Control
             // Get the parsed command from the input provided.
             ParsedCommand parsedCommand = Parse(input);
 
-            try
+            // Set the command if it exists within the availableCommands array. (This will throw an exception that is caught if the key doesn't exist)
+            // TODO: Update comment
+            Command command = availableCommands.GetCommand(parsedCommand.Command);
+            if(command == null)
             {
-                // Set the command if it exists within the availableCommands array. (This will throw an exception that is caught if the key doesn't exist)
-                // TODO: Update comment
-                Command command = availableCommands.GetCommand(parsedCommand.Command);
-                // Execute the command on the entity. (In this case the detective)
-                return command.Execute(parsedCommand, detective);
-            }
-            catch(KeyNotFoundException)
-            {
-                // If the command doesn't exist then inform the user.
                 return new CommandResponse("The command you have entered is invalid, please try again!");
             }
+            // Execute the command on the entity. (In this case the detective)
+            return command.Execute(parsedCommand, detective);
         }
 
         private ParsedCommand Parse(String input)

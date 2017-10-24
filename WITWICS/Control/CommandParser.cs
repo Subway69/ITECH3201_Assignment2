@@ -21,6 +21,7 @@ namespace WITWICS.Control
         public CommandParser(ArrayList validCommands)
         {
             this.validCommands = validCommands;
+            this.ignoredWords = new ArrayList();
         }
 
         public CommandParser(ArrayList validCommands, ArrayList ignoredWords)
