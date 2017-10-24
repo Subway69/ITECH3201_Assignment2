@@ -21,7 +21,7 @@ namespace WITWICS.Control
 
         public Command GetCommand(string command)
         {
-            // Try and return the Command reference from the HashTable
+            // Try and return the Command object pointer from the HashTable
             try
             {
                 return (Command)AvailableCommands[command];
@@ -39,7 +39,7 @@ namespace WITWICS.Control
             set => availableCommands = value;
         }
 
-        public ArrayList GetLabels()
+        public ArrayList GetCommandLabels()
         {
             // Return all the available commands. [ArrayList(String)]
             return new ArrayList(availableCommands.Keys);

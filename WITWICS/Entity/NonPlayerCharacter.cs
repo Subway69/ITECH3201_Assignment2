@@ -5,7 +5,7 @@ namespace WITWICS.Entity
 {
     public class NonPlayerCharacter : Character
     {
-        private Clue aClue;
+        private Clue clue;
 
         public NonPlayerCharacter()
         {
