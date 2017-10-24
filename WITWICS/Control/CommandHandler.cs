@@ -11,7 +11,7 @@ namespace WITWICS.Control
     class CommandHandler
     {
         private CommandState availableCommands;
-        private CommandParser commandParser;
+        // private CommandParser commandParser;
 
         public CommandHandler()
         {
