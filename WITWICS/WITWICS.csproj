@@ -45,6 +45,7 @@
     <Compile Include="Boundary\IGameClient.cs" />
     <Compile Include="Boundary\IGameData.cs" />
     <Compile Include="Control\ACMEController.cs" />
+    <Compile Include="Control\ApprehendCommand.cs" />
     <Compile Include="Control\Command.cs" />
     <Compile Include="Control\CommandHandler.cs" />
     <Compile Include="Control\CommandParser.cs" />
@@ -53,10 +54,12 @@
     <Compile Include="Control\CommandState.cs" />
     <Compile Include="Control\FlightState.cs" />
     <Compile Include="Control\FlyCommand.cs" />
-    <Compile Include="Control\TalkCommand.cs" />
+    <Compile Include="Control\MovementState.cs" />
+    <Compile Include="Control\TalkNPCCommand.cs" />
     <Compile Include="Control\MoveCommand.cs" />
     <Compile Include="Control\ParsedCommand.cs" />
     <Compile Include="Control\QuitCommand.cs" />
+    <Compile Include="Control\TalkSuspectCommand.cs" />
     <Compile Include="Entity\Airport.cs" />
     <Compile Include="Entity\AirportCollection.cs" />
     <Compile Include="Entity\Case.cs" />

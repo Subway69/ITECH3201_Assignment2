@@ -15,15 +15,12 @@ namespace WITWICS.Control
         public CommandState()
         {
             AvailableCommands = new Hashtable();
-            AvailableCommands.Add("move", new MoveCommand());
-            AvailableCommands.Add("talk", new TalkCommand());
-            AvailableCommands.Add("quit", new QuitCommand());
-            AvailableCommands.Add("fly", new FlyCommand());
-            AvailableCommands.Add("command", new CommandsCommand(availableCommands));
-            AvailableCommands.Add("commands", new CommandsCommand(availableCommands));
-            AvailableCommands.Add("help", new CommandsCommand(availableCommands));
-            // TODO: Implement list all commands if possible.
-            // AvailableCommand.Add("");
+            // This isn't working and I'm not sure why so I'll just do it the dirty way for now.
+            //AvailableCommands.Add("move", new MoveCommand());
+            //AvailableCommands.Add("quit", new QuitCommand());
+            //AvailableCommands.Add("command", new CommandsCommand(GetCommandLabels()));
+            //AvailableCommands.Add("commands", new CommandsCommand(GetCommandLabels()));
+            //AvailableCommands.Add("help", new CommandsCommand(GetCommandLabels()));
 
         }
 

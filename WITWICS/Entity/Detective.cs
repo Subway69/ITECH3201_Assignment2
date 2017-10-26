@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,16 @@ namespace WITWICS.Entity
     {
         private Location location;
         private static int casesSolved = 0;
+        private ArrayList clues;
 
         public Detective()
         {
+            clues = new ArrayList();
         }
 
         public Detective(String name) : base(name)
         {
-
+            clues = new ArrayList();
         }
 
         public int CasesSolved
@@ -64,6 +67,22 @@ namespace WITWICS.Entity
                     break;
             }
             return rank;
+        }
+
+        public bool AddClue(Clue clue)
+        {
+            if(clues.Contains(clue))
+            {
+                return false;
+            }
+
+            clues.Add(clue);
+            return true;
+        }
+
+        public int CurrentClues()
+        {
+            return clues.Count;
         }
     }
 }

@@ -71,12 +71,24 @@ namespace WITWICS
         private void CreateNPCS()
         {
             npcs = new NonPlayerCharacter[6];
-            npcs[0] = new NonPlayerCharacter("Matthew", new Clue(villian.Eyes));
-            npcs[1] = new NonPlayerCharacter("Aaron", new Clue(villian.Hair));
-            npcs[2] = new NonPlayerCharacter("Logan", new Clue(villian.Hobby));
-            npcs[3] = new NonPlayerCharacter("Keira", new Clue(villian.Feature));
-            npcs[4] = new NonPlayerCharacter("Brianna", new Clue(villian.Vehicle));
-            npcs[5] = new NonPlayerCharacter("Abbey", new Clue(villian.Sex));
+            npcs[0] = new NonPlayerCharacter("Matthew", new Clue(
+                "has " + villian.Eyes + " eyes"
+            ));
+            npcs[1] = new NonPlayerCharacter("Aaron", new Clue(
+                "has " + villian.Hair + " hair"
+            ));
+            npcs[2] = new NonPlayerCharacter("Logan", new Clue(
+                "enjoys " + villian.Hobby + " in their spare time"
+            ));
+            npcs[3] = new NonPlayerCharacter("Keira", new Clue(
+                "can be identified by their " + villian.Feature
+            ));
+            npcs[4] = new NonPlayerCharacter("Brianna", new Clue(
+                "drove a " + villian.Vehicle
+            ));
+            npcs[5] = new NonPlayerCharacter("Abbey", new Clue(
+                "is a " + villian.Sex
+            ));
         }
 
         private void AssignNPCS()
@@ -104,7 +116,7 @@ namespace WITWICS
         private void CreateSuspects()
         {
             suspects = new Suspect[4];
-            suspects[0] = new Suspect("William", "Male", "Brown", "Blue", "Saxophone", "Monobrow", "Commodore");
+            suspects[0] = new Suspect("William", "Male", "Brown", "Blue", "Long sandy walks on the beach", "Monobrow", "Commodore");
             suspects[1] = new Suspect("John", "Male", "Blonde", "Blue", "Hunting", "Scar", "Audi");
             suspects[2] = new Suspect("Jessica", "Female", "Blonde", "Brown", "Knitting", "Dimples", "Hyundai");
             suspects[3] = new Suspect("Kate", "Female", "Red", "Green", "Gym", "Muscles", "Rangerover");

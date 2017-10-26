@@ -20,6 +20,8 @@ namespace WITWICS.Control
 
         public CommandResponse ProcessTurn(string input, Detective detective)
         {
+            // Update our state each turn changing the available commands
+            availableCommands = availableCommands.Update(detective);
             // Get the parsed command from the input provided.
             ParsedCommand parsedCommand = Parse(input);
 
