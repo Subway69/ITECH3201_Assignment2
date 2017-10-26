@@ -25,7 +25,7 @@ namespace WITWICS.Control
             }
 
             detective.Location = destination.TheDestination;
-            return new CommandResponse("You find yourself looking at " + detective.Location.Description + "\n\n" + detective.Location.ToString());
+            return new CommandResponse(detective.Location.ToString());
         }
     }
 }

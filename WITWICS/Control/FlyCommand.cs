@@ -26,7 +26,7 @@ namespace WITWICS.Control
 
             detective.Location = (Airport)destination.TheDestination;
 
-            return new CommandResponse("You've landed in " + detective.Location.Description + "\n\n" + detective.Location.ToString());
+            return new CommandResponse(detective.Location.ToString());
         }
     }
 }

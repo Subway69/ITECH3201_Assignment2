@@ -16,7 +16,8 @@ namespace WITWICS
 
         private AirportCollection airports;
         private LocationCollection locations;
-        private Hashtable suspects;
+        private Suspect[] suspects;
+        //private Array femaleSuspects;
 
         public HardCodedData()
         {
@@ -26,6 +27,7 @@ namespace WITWICS
         }
         
         // wot
+        // Could use this to clean up objects if we were to be doing multiple cases.
         public virtual void Dispose()
         {
         }
@@ -50,13 +52,44 @@ namespace WITWICS
         {
             CreateAirports();
             CreateLocations();
+            CreateSuspects();
+            AssignSuspects();
 
-            startUp = (Location)airports.GetAirport("acme");
+            startUp = airports.GetAirport("acme");
+
             // Create suspects
-            Suspect robArr = new Suspect("Rob Arr", "Male", "Brown", "Brown", "Golf", "Scar", "Volkswagon");
+            Suspect villian = AssignVillian();
 
             // Create case
-            currentCase = new Case(1, "Valuable Treasure", "preserved artifacts from Jewish synagogues", robArr, airports.GetAirport("china"));
+            currentCase = new Case("Valuable Treasure", "preserved artifacts from Jewish synagogues", villian, airports.GetAirport("china"));
+        }
+
+        private void CreateSuspects()
+        {
+            suspects = new Suspect[4];
+            suspects[0] = new Suspect("William", "Male", "Brown", "Blue", "Saxophone", "Monobrow", "Commodore");
+            suspects[1] = new Suspect("John", "Male", "Blonde", "Blue", "Hunting", "Scar", "Audi");
+            suspects[2] = new Suspect("Jessica", "Female", "Blonde", "Brown", "Knitting", "Dimples", "Hyundai");
+            suspects[3] = new Suspect("Kate", "Female", "Red", "Green", "Gym", "Muscles", "Rangerover");
+        }
+
+        private void AssignSuspects()
+        {
+            int i = 0;
+            foreach(string location in airports.GetAirports().Keys)
+            {
+                if (!location.Equals("acme"))
+                {
+                    airports.GetAirport(location).Suspect = suspects[i];
+                    i++;
+                }
+            }
+        }
+
+        private Suspect AssignVillian()
+        {
+            Random rand = new Random();
+            return suspects[rand.Next(0, 3)];
         }
 
         private void CreateAirports()
@@ -119,11 +152,8 @@ namespace WITWICS
             locations = new LocationCollection();
 
             CreateAustraliaLocations();
-
             CreateAfricaLocations();
-
             CreateChinaLocations();
-
             CreateIndiaLocations();
         }
 
@@ -207,6 +237,7 @@ namespace WITWICS
             CreateDestinations("china", new string[] { "beijing", "shanghai", "shenzhen" });
         }
 
+        // TODO: Rename method
         private void CreateDestinations(string airport, string[] cities)
         {
             // TODO: Please for the love of god comment out what this does

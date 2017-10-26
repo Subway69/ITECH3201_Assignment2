@@ -16,6 +16,7 @@ namespace WITWICS.Entity
 
         // private AirportCollection airports;
         private DestinationCollection flights;
+        private Suspect suspect;
 
         public Airport() : base()
         {
@@ -25,6 +26,13 @@ namespace WITWICS.Entity
         public Airport(String description, String name) : base(description, name)
         {
             flights = new DestinationCollection();
+        }
+
+        // TODO: Implementation pending
+        public Suspect Suspect
+        {
+            get => suspect;
+            set => suspect = value;
         }
 
         public Boolean AddFlight(String destinationName, Destination theDestination)
@@ -47,16 +55,13 @@ namespace WITWICS.Entity
 
         public override string ToString()
         {
-            //
-            return base.ToString() 
-                + "\n*********\nFlights\n*********\n" 
-                + flights.ListLocations();
+            StringBuilder returnString = new StringBuilder();
+            returnString.Append(base.ToString());
+            returnString.Append("Fly \n");
+            returnString.Append("**********\n");
+            returnString.Append(GetFlightsCollection().ListLocations() + "\n");
+
+            return returnString.ToString();
         }
-
-        
-
-        // TODO: Add Destination/Flights collection.
-
-        // public override Boolean AddDestination() { throw new NotImplementedException; }
     }
 }

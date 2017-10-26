@@ -59,10 +59,16 @@ namespace WITWICS.Entity
 
         public override string ToString()
         {
-            return "**********\n" + this.Name + "\n**********"
-                + "\n" + destinations.ListLocations()
-                + "\n**********\nYou find yourself in "
-                + this.Description + "\n**********\n";
+            StringBuilder returnString = new StringBuilder();
+            returnString.Append("\n**********\n");
+            returnString.Append("Location: " + Name + "\n");
+            returnString.Append("You find yourself in " + Description + "\n");
+            returnString.Append("**********\n");
+            returnString.Append("Move \n");
+            returnString.Append("**********\n");
+            returnString.Append(GetDestinationCollection().ListLocations() + "\n");
+
+            return returnString.ToString();
         }
     }
 }
