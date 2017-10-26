@@ -7,7 +7,7 @@ using WITWICS.Entity;
 
 namespace WITWICS.Control
 {
-    public class LookCommand : Command
+    public class TalkCommand : Command
     {
         public override CommandResponse Execute(ParsedCommand command, Detective detective)
         {

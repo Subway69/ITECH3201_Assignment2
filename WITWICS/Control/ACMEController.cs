@@ -9,7 +9,6 @@ namespace WITWICS.Control
         private IGameClient gameClient;
         private IGameData gameData;
         private Detective detective;
-        private Case currentCase;
         private CommandHandler commandHandler;
 
         public ACMEController(IGameData gameData, IGameClient gameClient)
@@ -66,11 +65,14 @@ namespace WITWICS.Control
 
             // print out suspect reported at scene of crime
             gameClient.ConsoleMessage(malefemale + " suspect reported at the scene of the crime.\n\n");
-
+            
             // print out "Your assignment: Track the thief from <city> to <his / her> hideout and arrest <him / her>
             gameClient.ConsoleMessage("Your assignment: Track the thief from " + gameData.GetCurrentCase().StartingCity.Name + " to " + hisher + " hideout and arrest them!\n\n");
 
-            gameClient.ConsoleMessage("Good luck, " + detective.GetRank() + " " + detective.Name + ".");
+            gameClient.ConsoleMessage("Good luck, " + detective.GetRank() + " " + detective.Name + ".\n\n");
+
+            Airport location = (Airport)detective.Location;
+            gameClient.ConsoleMessage(detective.Location.ToString());
         }
 
         public void RunGame()

@@ -49,10 +49,11 @@
     <Compile Include="Control\CommandHandler.cs" />
     <Compile Include="Control\CommandParser.cs" />
     <Compile Include="Control\CommandResponse.cs" />
+    <Compile Include="Control\CommandsCommand.cs" />
     <Compile Include="Control\CommandState.cs" />
     <Compile Include="Control\FlightState.cs" />
     <Compile Include="Control\FlyCommand.cs" />
-    <Compile Include="Control\LookCommand.cs" />
+    <Compile Include="Control\TalkCommand.cs" />
     <Compile Include="Control\MoveCommand.cs" />
     <Compile Include="Control\ParsedCommand.cs" />
     <Compile Include="Control\QuitCommand.cs" />

@@ -21,11 +21,13 @@ namespace WITWICS.Entity
         public Airport() : base()
         {
             flights = new DestinationCollection();
+            Suspect = null;
         }
 
         public Airport(String description, String name) : base(description, name)
         {
             flights = new DestinationCollection();
+            Suspect = null;
         }
 
         // TODO: Implementation pending
@@ -60,6 +62,12 @@ namespace WITWICS.Entity
             returnString.Append("Fly \n");
             returnString.Append("**********\n");
             returnString.Append(GetFlightsCollection().ListLocations() + "\n");
+            returnString.Append("**********\n");
+            if (!(Suspect == null))
+            {
+                returnString.Append("Suspect Found! Use talk to talk to them\n");
+                returnString.Append("[" + suspect.Name + "]");
+            }
 
             return returnString.ToString();
         }

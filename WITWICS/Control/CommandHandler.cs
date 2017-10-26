@@ -33,7 +33,7 @@ namespace WITWICS.Control
             Command command = availableCommands.GetCommand(parsedCommand.Command);
             if(command == null)
             {
-                return new CommandResponse("The command you have entered is invalid, please try again!");
+                return new CommandResponse("The command you have entered is invalid, for a list of commands use \"commands\"");
             }
             // Execute the command on the entity. (In this case the detective)
             return command.Execute(parsedCommand, detective);

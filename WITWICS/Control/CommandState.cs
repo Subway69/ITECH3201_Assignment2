@@ -16,9 +16,12 @@ namespace WITWICS.Control
         {
             AvailableCommands = new Hashtable();
             AvailableCommands.Add("move", new MoveCommand());
-            AvailableCommands.Add("look", new LookCommand());
+            AvailableCommands.Add("talk", new TalkCommand());
             AvailableCommands.Add("quit", new QuitCommand());
             AvailableCommands.Add("fly", new FlyCommand());
+            AvailableCommands.Add("command", new CommandsCommand(availableCommands));
+            AvailableCommands.Add("commands", new CommandsCommand(availableCommands));
+            AvailableCommands.Add("help", new CommandsCommand(availableCommands));
             // TODO: Implement list all commands if possible.
             // AvailableCommand.Add("");
 
