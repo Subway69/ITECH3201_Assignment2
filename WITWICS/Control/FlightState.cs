@@ -11,7 +11,7 @@ namespace WITWICS.Control
     {
         public FlightState() : base()
         {
-            AvailableCommands.Add("fly", new FlyCommand());
+            // AvailableCommands.Add("fly", new FlyCommand());
         }
 
         public override CommandState Update(Detective detective)

@@ -18,6 +18,10 @@ namespace WITWICS.Control
             AvailableCommands.Add("move", new MoveCommand());
             AvailableCommands.Add("look", new LookCommand());
             AvailableCommands.Add("quit", new QuitCommand());
+            AvailableCommands.Add("fly", new FlyCommand());
+            // TODO: Implement list all commands if possible.
+            // AvailableCommand.Add("");
+
         }
 
         public abstract CommandState Update(Detective detective);

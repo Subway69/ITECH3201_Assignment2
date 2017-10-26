@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,48 @@ namespace WITWICS.Entity
         // I could be looking too far into this.
 
         // private AirportCollection airports;
-        public Airport() : base() { }
+        private DestinationCollection flights;
 
-        public Airport(String description, String name) : base(description, name) { }
+        public Airport() : base()
+        {
+            flights = new DestinationCollection();
+        }
+
+        public Airport(String description, String name) : base(description, name)
+        {
+            flights = new DestinationCollection();
+        }
+
+        public Boolean AddFlight(String destinationName, Destination theDestination)
+        {
+            if (flights.HasDestination(destinationName))
+                return false;
+            flights.AddDestination(destinationName, theDestination);
+            return true;
+        }
+
+        public Destination GetFlight(String destinationLabel)
+        {
+            return (Destination)flights.GetDestination(destinationLabel);
+        }
+
+        public DestinationCollection GetFlightsCollection()
+        {
+            return flights;
+        }
+
+        public override string ToString()
+        {
+            //
+            return base.ToString() 
+                + "\n*********\nFlights\n*********\n" 
+                + flights.ListLocations();
+        }
+
         
+
+        // TODO: Add Destination/Flights collection.
+
+        // public override Boolean AddDestination() { throw new NotImplementedException; }
     }
 }

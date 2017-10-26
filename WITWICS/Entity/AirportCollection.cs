@@ -37,6 +37,13 @@ namespace WITWICS.Entity
             return airports.Contains(airportLabel);
         }
 
+        public Hashtable GetAirports()
+        {
+            // Hashtable theAirports;
+
+            return (Hashtable)airports.Clone();
+        }
+
         public string ListAirports()
         {
             StringBuilder returnString = new StringBuilder();

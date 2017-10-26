@@ -17,14 +17,15 @@ namespace WITWICS.Control
             }
 
             String destinationLabel = (String)command.Arguments[0];
-            Destination destination = detective.Location.GetDestination(destinationLabel);
+
+            Destination destination = detective.Location.GetDestinationCollection().GetDestination(destinationLabel);
             if(destination == null)
             {
                 return new CommandResponse("I can't move there, try going somewhere else");
             }
 
             detective.Location = destination.TheDestination;
-            return new CommandResponse("You find yourself looking at " + detective.Location.Description);
+            return new CommandResponse("You find yourself looking at " + detective.Location.Description + "\n\n" + detective.Location.ToString());
         }
     }
 }

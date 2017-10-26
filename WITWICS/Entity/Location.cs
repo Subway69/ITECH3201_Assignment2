@@ -10,32 +10,38 @@ namespace WITWICS.Entity
 {
    public class Location
     {
-        private Hashtable destinations;
+        private DestinationCollection destinations;
         private String description;
         private String name;
 
         public Location()
         {
+
         }
 
         public Location(String description, String name)
         {
             Description = description;
             Name = name;
-            destinations = new Hashtable();
+            destinations = new DestinationCollection();
         }
 
         public Boolean AddDestination(String destinationName, Destination theDestination)
         {
-            if (destinations.ContainsKey(destinationName))
+            if (destinations.HasDestination(destinationName))
                 return false;
-            destinations.Add(destinationName, theDestination);
+            destinations.AddDestination(destinationName, theDestination);
             return true;
         }
 
         public Destination GetDestination(String destinationLabel)
         {
-            return (Destination)destinations[destinationLabel];
+            return destinations.GetDestination(destinationLabel);
+        }
+
+        public DestinationCollection GetDestinationCollection()
+        {
+            return destinations;
         }
 
 
@@ -49,6 +55,14 @@ namespace WITWICS.Entity
         {
             get { return name; }
             set { name = value; }
+        }
+
+        public override string ToString()
+        {
+            return "**********\n" + this.Name + "\n**********"
+                + "\n" + destinations.ListLocations()
+                + "\n**********\nYou find yourself in "
+                + this.Description + "\n**********\n";
         }
     }
 }
