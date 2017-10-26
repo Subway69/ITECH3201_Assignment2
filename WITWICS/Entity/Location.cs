@@ -17,7 +17,8 @@ namespace WITWICS.Entity
 
         public Location()
         {
-
+            destinations = new DestinationCollection();
+            npcs = new NPCCollection();
         }
 
         public Location(String description, String name)
@@ -25,11 +26,17 @@ namespace WITWICS.Entity
             Description = description;
             Name = name;
             destinations = new DestinationCollection();
+            npcs = new NPCCollection();
         }
 
         public DestinationCollection GetDestinationCollection()
         {
             return destinations;
+        }
+
+        public NPCCollection GetNPCCollection()
+        {
+            return npcs;
         }
 
 
@@ -55,6 +62,9 @@ namespace WITWICS.Entity
             returnString.Append("Move \n");
             returnString.Append("**********\n");
             returnString.Append(GetDestinationCollection().ListLocations() + "\n");
+            returnString.Append("Talk \n");
+            returnString.Append("**********\n");
+            returnString.Append(GetNPCCollection().ListNPCs() + "\n");
 
             return returnString.ToString();
         }

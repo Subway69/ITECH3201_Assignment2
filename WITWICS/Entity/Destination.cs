@@ -9,12 +9,12 @@ namespace WITWICS.Entity
     public class Destination
     {
         private String description;
-        private Location theDestination;
+        private Location location;
 
         public Destination (String description, Location destination)
         {
             Description = description;
-            TheDestination = destination;
+            Location = destination;
         }
 
 
@@ -24,10 +24,10 @@ namespace WITWICS.Entity
             set { description = value; }
         }
 
-        public Location TheDestination
+        public Location Location
         {
-            get { return theDestination; }
-            set { theDestination = value; }
+            get { return location; }
+            set { location = value; }
         }
     }
 }

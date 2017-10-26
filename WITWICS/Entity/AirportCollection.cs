@@ -39,8 +39,6 @@ namespace WITWICS.Entity
 
         public Hashtable GetAirports()
         {
-            // Hashtable theAirports;
-
             return (Hashtable)airports.Clone();
         }
 

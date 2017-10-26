@@ -24,7 +24,7 @@ namespace WITWICS.Control
                 return new CommandResponse("I can't move there, try going somewhere else");
             }
 
-            detective.Location = destination.TheDestination;
+            detective.Location = destination.Location;
             return new CommandResponse(detective.Location.ToString());
         }
     }

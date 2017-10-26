@@ -12,18 +12,18 @@ namespace WITWICS
     class HardCodedData : IGameData
     {
         private Location startUp;
+        private Suspect villian;
         private Case currentCase;
 
         private AirportCollection airports;
         private LocationCollection locations;
         private Suspect[] suspects;
+        private NonPlayerCharacter[] npcs;
         //private Array femaleSuspects;
 
         public HardCodedData()
         {
             CreateWorldMap();
-            //CreateWorldoMap();
-            Console.Out.WriteLine(airports.ListAirports());
         }
         
         // wot
@@ -52,16 +52,53 @@ namespace WITWICS
         {
             CreateAirports();
             CreateLocations();
+            CreateDestinations();
             CreateSuspects();
             AssignSuspects();
+            villian = AssignVillian();
+            CreateNPCS();
+            AssignNPCS();
 
             startUp = airports.GetAirport("acme");
 
             // Create suspects
-            Suspect villian = AssignVillian();
+            
 
             // Create case
             currentCase = new Case("Valuable Treasure", "preserved artifacts from Jewish synagogues", villian, airports.GetAirport("china"));
+        }
+
+        private void CreateNPCS()
+        {
+            npcs = new NonPlayerCharacter[6];
+            npcs[0] = new NonPlayerCharacter("Matthew", new Clue(villian.Eyes));
+            npcs[1] = new NonPlayerCharacter("Aaron", new Clue(villian.Hair));
+            npcs[2] = new NonPlayerCharacter("Logan", new Clue(villian.Hobby));
+            npcs[3] = new NonPlayerCharacter("Keira", new Clue(villian.Feature));
+            npcs[4] = new NonPlayerCharacter("Brianna", new Clue(villian.Vehicle));
+            npcs[5] = new NonPlayerCharacter("Abbey", new Clue(villian.Sex));
+        }
+
+        private void AssignNPCS()
+        {
+            // TODO: Implement random assigning of NPCS to locations.
+            Location[] theLocations = new Location[locations.GetLocations().Count];
+            int i = 0;
+            foreach (string locationLabel in locations.GetLocations().Keys)
+            {
+                theLocations[i] = locations.GetLocation(locationLabel);
+                i++;
+            }
+            Random rand = new Random();
+            foreach (NonPlayerCharacter npc in npcs)
+            {
+                // A random location label
+                Location randomLocation = theLocations[rand.Next(0, (theLocations.Length - 1))];
+
+                if (randomLocation.GetNPCCollection().AddNPC((npc.Name.ToLower()), npc))
+                    Console.Out.WriteLine("Assigning " + npc.Name + " to " + randomLocation.Name);
+                Console.Out.WriteLine(randomLocation.GetNPCCollection().ListNPCs());
+            }
         }
 
         private void CreateSuspects()
@@ -121,9 +158,7 @@ namespace WITWICS
                 "India"
             ));
 
-            LinkAirports();
-            CreateLocations();
-            CreateDestinations();
+            LinkAirports();            
         }
 
         // Iterate through each airport in our hashtable and link them. ???

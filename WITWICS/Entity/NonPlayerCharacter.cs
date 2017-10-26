@@ -11,8 +11,9 @@ namespace WITWICS.Entity
         {
         }
 
-        public NonPlayerCharacter(Clue clue)
+        public NonPlayerCharacter(String name, Clue clue) : base(name)
         {
+            Name = name;
             Clue = clue;
         }
 

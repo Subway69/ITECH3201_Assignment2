@@ -7,6 +7,16 @@ namespace WITWICS.Entity
     {
         private String description;
 
+        public Clue()
+        {
+
+        }
+
+        public Clue(String description)
+        {
+            Description = description;
+        }
+
         public string Description
         {
             get { return description; }

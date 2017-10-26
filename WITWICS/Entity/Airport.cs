@@ -45,7 +45,13 @@ namespace WITWICS.Entity
         public override string ToString()
         {
             StringBuilder returnString = new StringBuilder();
-            returnString.Append(base.ToString());
+            returnString.Append("\n**********\n");
+            returnString.Append("Location: " + Name + "\n");
+            returnString.Append("You find yourself in " + Description + "\n");
+            returnString.Append("**********\n");
+            returnString.Append("Move \n");
+            returnString.Append("**********\n");
+            returnString.Append(GetDestinationCollection().ListLocations() + "\n");
             returnString.Append("Fly \n");
             returnString.Append("**********\n");
             returnString.Append(GetFlightsCollection().ListLocations() + "\n");

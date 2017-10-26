@@ -40,7 +40,7 @@ namespace WITWICS.Entity
         public string ListNPCs()
         {
             StringBuilder returnString = new StringBuilder();
-            returnString.Append("NPCs found :: ");
+            returnString.Append("NPCs found :: " + npcs.Count);
             foreach(string npc in npcs.Keys)
             {
                 returnString.Append("[" + npc + "]");

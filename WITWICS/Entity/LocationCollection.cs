@@ -32,6 +32,11 @@ namespace WITWICS.Entity
             return (Location)locations[locationLabel];
         }
 
+        public Hashtable GetLocations()
+        {
+            return (Hashtable)locations;
+        }
+
         public bool HasLocation(String locationLabel)
         {
             return locations.Contains(locationLabel);
