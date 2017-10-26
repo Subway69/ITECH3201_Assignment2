@@ -8,7 +8,7 @@ using WITWICS.Entity;
 
 namespace WITWICS.Control
 {
-    class CommandHandler
+    public class CommandHandler
     {
         private CommandState availableCommands;
         // private CommandParser commandParser;
