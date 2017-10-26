@@ -138,7 +138,7 @@ namespace WITWICS
                         // Console.Out.WriteLine("Added airport " + airport + " destination: " + destination);
                         Airport theAirport = airports.GetAirport(airport);
                         Location theDestination = airports.GetAirport(destination);
-                        theAirport.AddFlight(destination, new Destination(
+                        theAirport.GetFlightsCollection().AddDestination(destination, new Destination(
                             theDestination.Description,
                             theDestination
                         ));

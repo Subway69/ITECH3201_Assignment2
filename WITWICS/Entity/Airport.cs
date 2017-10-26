@@ -37,19 +37,6 @@ namespace WITWICS.Entity
             set => suspect = value;
         }
 
-        public Boolean AddFlight(String destinationName, Destination theDestination)
-        {
-            if (flights.HasDestination(destinationName))
-                return false;
-            flights.AddDestination(destinationName, theDestination);
-            return true;
-        }
-
-        public Destination GetFlight(String destinationLabel)
-        {
-            return (Destination)flights.GetDestination(destinationLabel);
-        }
-
         public DestinationCollection GetFlightsCollection()
         {
             return flights;

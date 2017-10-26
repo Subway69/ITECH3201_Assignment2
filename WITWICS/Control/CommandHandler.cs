@@ -15,12 +15,7 @@ namespace WITWICS.Control
 
         public CommandHandler()
         {
-            // We should implement state in order to restrict our commands as shown in week 10?
             availableCommands = new FlightState();
-            // Create basic commands that should always be available.
-            
-            // This is a stub and will cause a compile error for now whilst I assess it.
-            // commandParser = new CommandParser();
         }
 
         public CommandResponse ProcessTurn(string input, Detective detective)

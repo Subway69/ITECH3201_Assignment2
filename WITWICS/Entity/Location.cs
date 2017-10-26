@@ -11,6 +11,7 @@ namespace WITWICS.Entity
    public class Location
     {
         private DestinationCollection destinations;
+        private NPCCollection npcs;
         private String description;
         private String name;
 
@@ -24,19 +25,6 @@ namespace WITWICS.Entity
             Description = description;
             Name = name;
             destinations = new DestinationCollection();
-        }
-
-        public Boolean AddDestination(String destinationName, Destination theDestination)
-        {
-            if (destinations.HasDestination(destinationName))
-                return false;
-            destinations.AddDestination(destinationName, theDestination);
-            return true;
-        }
-
-        public Destination GetDestination(String destinationLabel)
-        {
-            return destinations.GetDestination(destinationLabel);
         }
 
         public DestinationCollection GetDestinationCollection()
