@@ -17,7 +17,7 @@ namespace WITWICS.Control
             }
             if(command.Arguments.Count == 1)
             {
-                return new CommandResponse("Please let me know what you want to talk about!");
+                return new CommandResponse("Please let me know what you want to talk about! [hair, eyes, hobby, feature, vehicle, sex]");
             }
 
             String suspectName = (String)command.Arguments[0];
