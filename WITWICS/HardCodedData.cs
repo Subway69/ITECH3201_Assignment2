@@ -19,14 +19,12 @@ namespace WITWICS
         private LocationCollection locations;
         private Suspect[] suspects;
         private NonPlayerCharacter[] npcs;
-        //private Array femaleSuspects;
 
         public HardCodedData()
         {
             CreateWorldMap();
         }
         
-        // wot
         // Could use this to clean up objects if we were to be doing multiple cases.
         public virtual void Dispose()
         {
