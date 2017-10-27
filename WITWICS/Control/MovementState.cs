@@ -7,7 +7,7 @@ using WITWICS.Entity;
 
 namespace WITWICS.Control
 {
-    class MovementState : CommandState
+    public class MovementState : CommandState
     {
         public MovementState()
         {

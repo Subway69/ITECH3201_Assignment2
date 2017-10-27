@@ -15,6 +15,10 @@ namespace WITWICS.Control
             {
                 return new CommandResponse("Please let me know who you want to talk to!");
             }
+            if(command.Arguments.Count == 1)
+            {
+                return new CommandResponse("Please let me know what you want to talk about!");
+            }
 
             String suspectName = (String)command.Arguments[0];
             String query = (String)command.Arguments[1];

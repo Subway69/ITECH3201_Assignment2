@@ -13,7 +13,7 @@ namespace WITWICS.Control
         {
             if (command.Arguments.Count == 0)
             {
-                return new CommandResponse("Please let me know where you want to move to");
+                return new CommandResponse("Please let me know where you want to fly to");
             }
 
             String destinationLabel = (String)command.Arguments[0];
@@ -21,7 +21,7 @@ namespace WITWICS.Control
             Destination destination = location.GetFlightsCollection().GetDestination(destinationLabel);
             if (destination == null)
             {
-                return new CommandResponse("I can't move there, try going somewhere else");
+                return new CommandResponse("I can't fly there, try going somewhere else");
             }
 
             detective.Location = (Airport)destination.Location;

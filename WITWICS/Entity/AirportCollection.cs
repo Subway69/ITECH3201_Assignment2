@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WITWICS.Entity
 {
-    class AirportCollection
+    public class AirportCollection
     {
         private Hashtable airports;
 

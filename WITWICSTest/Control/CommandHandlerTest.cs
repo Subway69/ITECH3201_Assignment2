@@ -10,7 +10,7 @@ namespace WITWICSTest.Control
     {
         private CommandHandler commandHandler;
         private Detective detective;
-        private Location location;
+        // private Location location;
         [TestInitialize]
         public void Init()
         {
@@ -27,6 +27,15 @@ namespace WITWICSTest.Control
             Assert.IsTrue(response.Message.Contains("move"));
             // The game should not have finished though
             Assert.IsFalse(response.FinishedGame);
+        }
+
+        [TestMethod]
+        public void It_Quits_The_Game()
+        {
+            CommandResponse response = commandHandler.ProcessTurn("quit", detective);
+            Assert.IsTrue(response.Message.ToLower().Contains("quit"));
+            // The game should have finished
+            Assert.IsTrue(response.FinishedGame);
         }
     }
 }
